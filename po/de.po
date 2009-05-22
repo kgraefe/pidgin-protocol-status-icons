@@ -1,0 +1,25 @@
+# German translation for Pidgin protcol Status Icons
+# Copyright (C) 2009 Konrad Gräfe <freakazoid@teamblind.de>
+# This file is distributed under the same license as the pidgin-protcol-status-icons package.
+# Konrad Gräfe <freakazoid@teamblind.de>, 2009
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gtk-freakazoid-protocol-status-icons\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-22 23:58+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Konrad Gräfe <freakazoid@teamblind.de>\n"
+"Language-Team: de_DE <freakazoid@teamblind.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/pidgin-protocol-status-icons.c:115
+msgid "Protocol Status Icons"
+msgstr ""
+
+#: ../src/pidgin-protocol-status-icons.c:116
+#: ../src/pidgin-protocol-status-icons.c:117
+msgid "Replaces the status icons in the buddy list."
+msgstr ""
