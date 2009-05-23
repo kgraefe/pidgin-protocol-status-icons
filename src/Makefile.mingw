@@ -1,0 +1,123 @@
+#
+# Makefile.mingw
+#
+#
+
+#
+# PATHS
+#
+
+PIDGIN_PROTOCOL_STATUS_ICONS_TOP :=		..
+-include $(PIDGIN_PROTOCOL_STATUS_ICONS_TOP)/local.mak
+PIDGIN_TREE_TOP ?=		../../../..
+include $(PIDGIN_TREE_TOP)/libpurple/win32/global.mak
+
+PIDGIN_PROTOCOL_STATUS_ICONS_VERSION := $(shell cat ${PIDGIN_PROTOCOL_STATUS_ICONS_TOP}/VERSION)
+
+##
+## VARIABLE DEFINITIONS
+##
+
+PIDGIN_PROTOCOL_STATUS_ICONS = pidgin-protocol-status-icons
+
+# Compiler Options
+
+#CFLAGS = 
+
+DEFINES = -DPIDGIN_PROTOCOL_STATUS_ICONS_VERSION=\"$(PIDGIN_PROTOCOL_STATUS_ICONS_VERSION)\" -DGETTEXT_PACKAGE=\"$(PIDGIN_PROTOCOL_STATUS_ICONS)\" -DHAVE_CONFIG_H
+
+#LDFLAGS = 
+
+#-mwindows
+
+##
+## INCLUDE PATHS
+##
+
+INCLUDE_PATHS +=        -I. \
+			-I ..\
+                        -I$(PIDGIN_TREE_TOP) \
+                        -I$(PURPLE_TOP) \
+                        -I$(PURPLE_TOP)/win32 \
+                        -I$(PIDGIN_TOP) \
+                        -I$(PIDGIN_TOP)/win32 \
+                        -I$(GTK_TOP)/include \
+                        -I$(GTK_TOP)/include/gtk-2.0 \
+                        -I$(GTK_TOP)/include/glib-2.0 \
+                        -I$(GTK_TOP)/include/pango-1.0 \
+                        -I$(GTK_TOP)/include/atk-1.0 \
+                        -I$(GTK_TOP)/include/freetype2 \
+                        -I$(GTK_TOP)/lib/glib-2.0/include \
+                        -I$(GTK_TOP)/lib/gtk-2.0/include \
+                        -I$(PIDGIN_TREE_TOP)
+
+LIB_PATHS =             \
+                        -L$(PURPLE_TOP) \
+                        -L$(PIDGIN_TOP) \
+                        -L$(GTK_TOP)/lib
+
+
+
+##
+##  SOURCES, OBJECTS
+##
+
+PIDGIN_PROTOCOL_STATUS_ICONS_SRC =	\
+	pidgin-protocol-status-icons.c
+
+
+PIDGIN_PROTOCOL_STATUS_ICONS_OBJ = $(PIDGIN_PROTOCOL_STATUS_ICONS_SRC:%.c=%.o)
+
+##
+## LIBRARIES
+##
+
+PLUGIN_LIBS = \
+        -lgtk-win32-2.0 \
+        -lglib-2.0 \
+        -lpango-1.0 \
+        -lpangoft2-1.0 \
+        -lgdk-win32-2.0 \
+        -lgdk_pixbuf-2.0 \
+        -lgobject-2.0 \
+        -lws2_32 \
+        -lintl \
+        -lpurple \
+        -lpidgin
+
+
+include $(PIDGIN_COMMON_RULES)
+
+##
+## TARGET DEFINITIONS
+##
+
+.PHONY: all clean install
+
+all: $(PIDGIN_PROTOCOL_STATUS_ICONS).dll
+
+install: all $(PIDGIN_INSTALL_PLUGINS_DIR)
+	cp $(PIDGIN_PROTOCOL_STATUS_ICONS).dll $(PIDGIN_INSTALL_PLUGINS_DIR)
+
+$(PIDGIN_PROTOCOL_STATUS_ICONS_OBJ): $(PIDGIN_PROTOCOL_STATUS_ICONS_TOP)/config.h $(PURPLE_VERSION_H)
+
+$(PIDGIN_PROTOCOL_STATUS_ICONS_TOP)/config.h: $(PIDGIN_PROTOCOL_STATUS_ICONS_TOP)/config.h.mingw
+	$(MAKE) -C $(PIDGIN_PROTOCOL_STATUS_ICONS_TOP) -f Makefile.mingw config.h
+
+##
+## BUILD DLL
+##
+
+$(PIDGIN_PROTOCOL_STATUS_ICONS).dll: $(PIDGIN_DLL).a $(PIDGIN_PROTOCOL_STATUS_ICONS_OBJ)
+	$(CC) -shared $(PIDGIN_PROTOCOL_STATUS_ICONS_OBJ) $(LIB_PATHS) $(PLUGIN_LIBS) $(DLL_LD_FLAGS) -o $(PIDGIN_PROTOCOL_STATUS_ICONS).dll
+
+
+##
+## CLEAN RULES
+##
+
+clean:
+	rm -f *.o
+	rm -f $(PIDGIN_PROTOCOL_STATUS_ICONS).dll
+
+include $(PIDGIN_COMMON_TARGETS)
