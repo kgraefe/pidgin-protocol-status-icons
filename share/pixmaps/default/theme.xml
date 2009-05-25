@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme name="Default Theme" version="1.0" author="Konrad Gräfe &lt;freakazoid@teamblind.de&gt;" website="http://freakazoid.teamblind.de/">
+	<protocol prpl-id="aim">
+		<status name="available" file="aim/available.png" />
+		<status name="away" file="aim/away.png" />
+		<status name="busy" file="aim/busy.png" />
+		<status name="chat" file="aim/chat.png" />
+		<status name="extended-away" file="aim/extended-away.png" />
+		<status name="invisible" file="aim/invisible.png" />
+		<status name="offline" file="aim/offline.png" />
+	</protocol>
+	<protocol prpl-id="bonjour">
+		<status name="available" file="bonjour/available.png" />
+		<status name="away" file="bonjour/away.png" />
+		<status name="busy" file="bonjour/busy.png" />
+		<status name="chat" file="bonjour/chat.png" />
+		<status name="extended-away" file="bonjour/extended-away.png" />
+		<status name="invisible" file="bonjour/invisible.png" />
+		<status name="offline" file="bonjour/offline.png" />
+	</protocol>
+	<protocol prpl-id="gadu-gadu">
+		<status name="available" file="gadu-gadu/available.png" />
+		<status name="away" file="gadu-gadu/away.png" />
+		<status name="busy" file="gadu-gadu/busy.png" />
+		<status name="chat" file="gadu-gadu/chat.png" />
+		<status name="extended-away" file="gadu-gadu/extended-away.png" />
+		<status name="invisible" file="gadu-gadu/invisible.png" />
+		<status name="offline" file="gadu-gadu/offline.png" />
+	</protocol>
+	<protocol prpl-id="icq">
+		<status name="available" file="icq/available.png" />
+		<status name="away" file="icq/away.png" />
+		<status name="busy" file="icq/busy.png" />
+		<status name="chat" file="icq/chat.png" />
+		<status name="extended-away" file="icq/extended-away.png" />
+		<status name="invisible" file="icq/invisible.png" />
+		<status name="offline" file="icq/offline.png" />
+	</protocol>
+	<protocol prpl-id="irc">
+		<status name="available" file="irc/available.png" />
+		<status name="away" file="irc/away.png" />
+		<status name="busy" file="irc/busy.png" />
+		<status name="chat" file="irc/chat.png" />
+		<status name="extended-away" file="irc/extended-away.png" />
+		<status name="invisible" file="irc/invisible.png" />
+		<status name="offline" file="irc/offline.png" />
+	</protocol>
+	<protocol prpl-id="jabber">
+		<status name="available" file="jabber/available.png" />
+		<status name="away" file="jabber/away.png" />
+		<status name="busy" file="jabber/busy.png" />
+		<status name="chat" file="jabber/chat.png" />
+		<status name="extended-away" file="jabber/extended-away.png" />
+		<status name="invisible" file="jabber/invisible.png" />
+		<status name="offline" file="jabber/offline.png" />
+	</protocol>
+	<protocol prpl-id="meanwhile">
+		<status name="available" file="meanwhile/available.png" />
+		<status name="away" file="meanwhile/away.png" />
+		<status name="busy" file="meanwhile/busy.png" />
+		<status name="chat" file="meanwhile/chat.png" />
+		<status name="extended-away" file="meanwhile/extended-away.png" />
+		<status name="invisible" file="meanwhile/invisible.png" />
+		<status name="offline" file="meanwhile/offline.png" />
+	</protocol>
+	<protocol prpl-id="msn">
+		<status name="available" file="msn/available.png" />
+		<status name="away" file="msn/away.png" />
+		<status name="busy" file="msn/busy.png" />
+		<status name="chat" file="msn/chat.png" />
+		<status name="extended-away" file="msn/extended-away.png" />
+		<status name="invisible" file="msn/invisible.png" />
+		<status name="offline" file="msn/offline.png" />
+	</protocol>
+	<protocol prpl-id="novell">
+		<status name="available" file="novell/available.png" />
+		<status name="away" file="novell/away.png" />
+		<status name="busy" file="novell/busy.png" />
+		<status name="chat" file="novell/chat.png" />
+		<status name="extended-away" file="novell/extended-away.png" />
+		<status name="invisible" file="novell/invisible.png" />
+		<status name="offline" file="novell/offline.png" />
+	</protocol>
+	<protocol prpl-id="qq">
+		<status name="available" file="qq/available.png" />
+		<status name="away" file="qq/away.png" />
+		<status name="busy" file="qq/busy.png" />
+		<status name="chat" file="qq/chat.png" />
+		<status name="extended-away" file="qq/extended-away.png" />
+		<status name="invisible" file="qq/invisible.png" />
+		<status name="offline" file="qq/offline.png" />
+	</protocol>
+	<protocol prpl-id="silc">
+		<status name="available" file="silc/available.png" />
+		<status name="away" file="silc/away.png" />
+		<status name="busy" file="silc/busy.png" />
+		<status name="chat" file="silc/chat.png" />
+		<status name="extended-away" file="silc/extended-away.png" />
+		<status name="invisible" file="silc/invisible.png" />
+		<status name="offline" file="silc/offline.png" />
+	</protocol>
+	<protocol prpl-id="simple">
+		<status name="available" file="simple/available.png" />
+		<status name="away" file="simple/away.png" />
+		<status name="busy" file="simple/busy.png" />
+		<status name="chat" file="simple/chat.png" />
+		<status name="extended-away" file="simple/extended-away.png" />
+		<status name="invisible" file="simple/invisible.png" />
+		<status name="offline" file="simple/offline.png" />
+	</protocol>
+	<protocol prpl-id="yahoo">
+		<status name="available" file="yahoo/available.png" />
+		<status name="away" file="yahoo/away.png" />
+		<status name="busy" file="yahoo/busy.png" />
+		<status name="chat" file="yahoo/chat.png" />
+		<status name="extended-away" file="yahoo/extended-away.png" />
+		<status name="invisible" file="yahoo/invisible.png" />
+		<status name="offline" file="yahoo/offline.png" />
+	</protocol>
+	<protocol prpl-id="zephyr">
+		<status name="available" file="zephyr/available.png" />
+		<status name="away" file="zephyr/away.png" />
+		<status name="busy" file="zephyr/busy.png" />
+		<status name="chat" file="zephyr/chat.png" />
+		<status name="extended-away" file="zephyr/extended-away.png" />
+		<status name="invisible" file="zephyr/invisible.png" />
+		<status name="offline" file="zephyr/offline.png" />
+	</protocol>
+</theme>

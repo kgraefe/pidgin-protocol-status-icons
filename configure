@@ -22050,7 +22050,7 @@ CFLAGS="$CFLAGS $pidgin_CFLAGS -Wall"
 
 # Checks for library functions.
 
-ac_config_files="$ac_config_files Makefile src/Makefile po/Makefile.in"
+ac_config_files="$ac_config_files Makefile src/Makefile po/Makefile.in share/Makefile share/pixmaps/Makefile share/pixmaps/default/Makefile"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -22646,6 +22646,9 @@ do
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
     "po/Makefile.in") CONFIG_FILES="$CONFIG_FILES po/Makefile.in" ;;
+    "share/Makefile") CONFIG_FILES="$CONFIG_FILES share/Makefile" ;;
+    "share/pixmaps/Makefile") CONFIG_FILES="$CONFIG_FILES share/pixmaps/Makefile" ;;
+    "share/pixmaps/default/Makefile") CONFIG_FILES="$CONFIG_FILES share/pixmaps/default/Makefile" ;;
     "po/stamp-it") CONFIG_COMMANDS="$CONFIG_COMMANDS po/stamp-it" ;;
 
   *) { { echo "$as_me:$LINENO: error: invalid argument: $ac_config_target" >&5
