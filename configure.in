@@ -22,7 +22,7 @@ AC_DEFINE_UNQUOTED(PLUGIN_AUTHOR, ["Konrad Gräfe <freakazoid@teamblind.de>"], [
 AC_PROG_CC
 AC_PROG_LIBTOOL
 AC_PROG_INTLTOOL
-GETTEXT_PACKAGE=protocol-status-icons
+GETTEXT_PACKAGE=pidgin-protocol-status-icons
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, ["$GETTEXT_PACKAGE"], [Define the gettext package to be used])
 ALL_LINGUAS="de"

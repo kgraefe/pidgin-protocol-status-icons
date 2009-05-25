@@ -5,7 +5,7 @@
 #define ENABLE_NLS 1
 
 /* Define the gettext package to be used */
-#define GETTEXT_PACKAGE "protocol-status-icons"
+#define GETTEXT_PACKAGE "pidgin-protocol-status-icons"
 
 /* Define to 1 if you have the `bind_textdomain_codeset' function. */
 #define HAVE_BIND_TEXTDOMAIN_CODESET 1

@@ -20310,7 +20310,7 @@ fi
 
 
 
-GETTEXT_PACKAGE=protocol-status-icons
+GETTEXT_PACKAGE=pidgin-protocol-status-icons
 
 
 cat >>confdefs.h <<_ACEOF
