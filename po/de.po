@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gtk-freakazoid-protocol-status-icons\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-22 23:58+0200\n"
+"POT-Creation-Date: 2009-05-29 11:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Konrad Gräfe <freakazoid@teamblind.de>\n"
 "Language-Team: de_DE <freakazoid@teamblind.de>\n"
@@ -15,11 +15,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/pidgin-protocol-status-icons.c:115
+#: ../src/pidgin-protocol-status-icons.c:54
+msgid "Could not load icons!\n"
+msgstr ""
+
+#: ../src/pidgin-protocol-status-icons.c:125
 msgid "Protocol Status Icons"
 msgstr ""
 
-#: ../src/pidgin-protocol-status-icons.c:116
-#: ../src/pidgin-protocol-status-icons.c:117
+#: ../src/pidgin-protocol-status-icons.c:126
+#: ../src/pidgin-protocol-status-icons.c:127
 msgid "Replaces the status icons in the buddy list."
 msgstr ""

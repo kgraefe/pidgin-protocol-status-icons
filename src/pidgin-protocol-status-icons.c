@@ -35,68 +35,12 @@
 
 #define PLUGIN_PREFS_PREFIX "/plugins/gtk/protocol-status-icons"
 
+#include "icons.h"
+#include "gtkblist-modifier.h"
+
 
 static PurplePlugin *plugin;
-static PidginBuddyList *gtkblist = NULL;
 
-/* TODO: became serious, boy! */
-static GdkPixbuf *hello_kitty = NULL;
-
-/** Icons **/
-static int row_changed_handler_id = -1;
-
-static void unload_icons() {
-	if(hello_kitty) g_object_unref(hello_kitty);
-	hello_kitty = NULL;
-}
-
-static gboolean load_icons() {
-	const gchar *filename = "hello_kitty.png";
-	gchar *file = NULL;
-	
-	file = g_build_filename(purple_user_dir(), "pixmaps", "pidgin", "pidgin-protocol-status-icons", filename, NULL);
-	if(!g_file_test(file, G_FILE_TEST_EXISTS)) {
-		g_free(file);
-		file = g_build_filename(DATADIR, "pixmaps", "pidgin", "pidgin-protocol-status-icons", filename, NULL);
-	}
-	if(!g_file_test(file, G_FILE_TEST_EXISTS)) {
-		g_free(file);
-		return FALSE;
-	}
-	
-	hello_kitty = gdk_pixbuf_new_from_file(file, NULL);
-	
-	g_free(file);
-	
-	return TRUE;
-}
-
-static void row_changed_cb(GtkTreeModel *model, GtkTreePath *path, GtkTreeIter *iter, gpointer data) {
-	static gboolean inuse = FALSE;
-	PurpleBlistNode *node;
-
-	if(inuse) return;
-
-	gtk_tree_model_get(model, iter, NODE_COLUMN, &node, -1);
-
-	if(!PURPLE_BLIST_NODE_IS_BUDDY(node) && !PURPLE_BLIST_NODE_IS_CONTACT(node)) return;
-
-	inuse = TRUE;
-	
-	gtk_tree_store_set(GTK_TREE_STORE(model), iter, STATUS_ICON_COLUMN, hello_kitty, STATUS_ICON_VISIBLE_COLUMN, (hello_kitty != NULL), -1);
-
-	inuse = FALSE;
-}
-
-static void gtkblist_created_cb(PurpleBuddyList *blist) {
-	gtkblist = PIDGIN_BLIST(blist);
-	
-	row_changed_handler_id = g_signal_connect(gtkblist->treemodel, "row_changed", G_CALLBACK(row_changed_cb), NULL);
-
-	pidgin_blist_refresh(blist);
-}
-
-/** Plugin-Gerödel **/
 static gboolean core_quitting = FALSE;
 
 static void core_quitting_cb() {
@@ -113,16 +57,13 @@ static gboolean plugin_load(PurplePlugin *_plugin) {
 	
 	purple_signal_connect(purple_get_core(), "quitting", plugin, core_quitting_cb, NULL);
 	
-	purple_signal_connect(pidgin_blist_get_handle(), "gtkblist-created", plugin, PURPLE_CALLBACK(gtkblist_created_cb), NULL);
-	if(pidgin_blist_get_default_gtk_blist()) gtkblist_created_cb(purple_get_blist());
+	gtkblist_modifier_connect(plugin);
 	
 	return TRUE;
 }
 
 static gboolean plugin_unload(PurplePlugin *plugin) {
-	if(g_signal_handler_is_connected(gtkblist->treemodel, row_changed_handler_id))
-		g_signal_handler_disconnect(gtkblist->treemodel, row_changed_handler_id);
-	
+	gtkblist_modifier_disconnect();
 	unload_icons();
 	
 	if(!core_quitting) pidgin_blist_refresh(purple_get_blist());

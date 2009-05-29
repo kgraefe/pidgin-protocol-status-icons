@@ -182,10 +182,22 @@ sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 sysconfdir = @sysconfdir@
 target_alias = @target_alias@
+EXTRA_DIST = \
+	internal.h \
+	icons.h \
+	gtkblist-modifier.h \
+	Makefile.mingw
+
+
 plugindir = $(libdir)/pidgin
 
 plugin_LTLIBRARIES = pidgin-protocol-status-icons.la
-pidgin_protocol_status_icons_la_SOURCES = pidgin-protocol-status-icons.c
+pidgin_protocol_status_icons_la_SOURCES = \
+	icons.c \
+	gtkblist-modifier.c \
+	pidgin-protocol-status-icons.c
+
+
 pidgin_protocol_status_icons_la_LDFLAGS = -module -avoid-version
 subdir = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -195,15 +207,17 @@ CONFIG_CLEAN_FILES =
 LTLIBRARIES = $(plugin_LTLIBRARIES)
 
 pidgin_protocol_status_icons_la_LIBADD =
-am_pidgin_protocol_status_icons_la_OBJECTS = \
-	pidgin-protocol-status-icons.lo
+am_pidgin_protocol_status_icons_la_OBJECTS = icons.lo \
+	gtkblist-modifier.lo pidgin-protocol-status-icons.lo
 pidgin_protocol_status_icons_la_OBJECTS = \
 	$(am_pidgin_protocol_status_icons_la_OBJECTS)
 
 DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
-@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/pidgin-protocol-status-icons.Plo
+@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/gtkblist-modifier.Plo \
+@AMDEP_TRUE@	./$(DEPDIR)/icons.Plo \
+@AMDEP_TRUE@	./$(DEPDIR)/pidgin-protocol-status-icons.Plo
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
@@ -261,6 +275,8 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gtkblist-modifier.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/icons.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pidgin-protocol-status-icons.Plo@am__quote@
 
 .c.o:

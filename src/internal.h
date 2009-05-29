@@ -67,4 +67,4 @@
 # define g_open open
 #endif /* !GLIB_CHECK_VERSION(2,6,0) */
 
-#endif
+#endif /* INTERNAL_H */

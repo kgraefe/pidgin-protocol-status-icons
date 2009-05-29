@@ -35,7 +35,7 @@ DEFINES = -DPIDGIN_PROTOCOL_STATUS_ICONS_VERSION=\"$(PIDGIN_PROTOCOL_STATUS_ICON
 ##
 
 INCLUDE_PATHS +=        -I. \
-			-I ..\
+						-I.. \
                         -I$(PIDGIN_TREE_TOP) \
                         -I$(PURPLE_TOP) \
                         -I$(PURPLE_TOP)/win32 \
@@ -63,6 +63,8 @@ LIB_PATHS =             \
 ##
 
 PIDGIN_PROTOCOL_STATUS_ICONS_SRC =	\
+	icons.c \
+	gtkblist-modifier.c \
 	pidgin-protocol-status-icons.c
 
 
