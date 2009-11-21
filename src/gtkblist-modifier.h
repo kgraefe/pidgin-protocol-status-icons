@@ -22,7 +22,7 @@
 
 #include <plugin.h>
 
-void gtkblist_modifier_connect(PurplePlugin *plugin);
-void gtkblist_modifier_disconnect(void);
+void gtkblist_modifier_init(PurplePlugin *plugin);
+void gtkblist_modifier_uninit(void);
 
 #endif /* PIDGIN_PROTOCOL_STATUS_GTKBLIST_MODIFIER_H */

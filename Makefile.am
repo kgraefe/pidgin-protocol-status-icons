@@ -5,4 +5,4 @@ EXTRA_DIST = \
 	po/Makefile.mingw \
 	config.h.mingw
 
-SUBDIRS = src po share
+SUBDIRS = src po

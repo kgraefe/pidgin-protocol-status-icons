@@ -23,5 +23,4 @@ if [ ! -d ${PIDGIN_CONFIG_DIR} ]; then
 fi
 
 cp -rv plugins/ ${PIDGIN_CONFIG_DIR}
-cp -rv pixmaps/ ${PIDGIN_CONFIG_DIR}
 cp -rv locale/ ${PIDGIN_CONFIG_DIR}

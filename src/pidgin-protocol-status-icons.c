@@ -50,20 +50,17 @@ static void core_quitting_cb() {
 static gboolean plugin_load(PurplePlugin *_plugin) {
 	plugin = _plugin;
 	
-	if(!load_icons()) {
-		purple_debug_error(PLUGIN_STATIC_NAME, _("Could not load icons!\n"));
-		return FALSE;
-	}
+	init_icons(plugin);
 	
 	purple_signal_connect(purple_get_core(), "quitting", plugin, core_quitting_cb, NULL);
 	
-	gtkblist_modifier_connect(plugin);
+	gtkblist_modifier_init(plugin);
 	
 	return TRUE;
 }
 
 static gboolean plugin_unload(PurplePlugin *plugin) {
-	gtkblist_modifier_disconnect();
+	gtkblist_modifier_uninit();
 	unload_icons();
 	
 	if(!core_quitting) pidgin_blist_refresh(purple_get_blist());
@@ -82,8 +79,7 @@ static PurplePluginInfo info = {
 	PURPLE_PRIORITY_DEFAULT,			/**< priority       */
 
 	PLUGIN_ID,							/**< id             */
-	NULL,			
-										/**< name           */
+	NULL,								/**< name           */
 	PLUGIN_VERSION,						/**< version        */
 	NULL,								/**  summary        */
 				

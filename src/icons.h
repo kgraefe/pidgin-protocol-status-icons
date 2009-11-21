@@ -24,10 +24,9 @@
 
 #include <gtkplugin.h>
 
-/* TODO: became serious, boy! */
-GdkPixbuf *hello_kitty;
-
 void unload_icons(void);
-gboolean load_icons(void);
+gboolean init_icons(PurplePlugin *plugin);
+
+GdkPixbuf *get_icon(const gchar *prpl, gint status);
 
 #endif /* PIDGIN_PROTOCOL_STATUS_ICONS_H */

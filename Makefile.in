@@ -190,7 +190,7 @@ EXTRA_DIST = \
 	config.h.mingw
 
 
-SUBDIRS = src po share
+SUBDIRS = src po
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
