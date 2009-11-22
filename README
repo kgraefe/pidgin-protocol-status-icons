@@ -1,0 +1,21 @@
+ZNC Helper will work with PURPLE_MAJOR_VERSION 2, but you must compile
+it with the minor version of purple that you plan to use it with.
+
+You must have glib, purple and pidgin development headers and libraries in order
+to build this package.  On Debian Etch just do the following and you'll
+get everything you need:
+
+apt-get install pidgin-dev
+
+Everything should build with the customary:
+
+./configure
+make
+make install
+
+Remember that "./configure --help" will show all the options available
+to help cope with odd setups, installations, and paths.
+
+Please note that you have copy a theme that supports this plugin to the themes directory in the .purple user directory of each user. You can find the default theme on https://sourceforge.net/projects/pidgin-p-status/ .
+
+After activating the plugin you have to choose the plugins default status icon theme (or any other status icon theme that supports this plugin) in "Tools -> Preferences".

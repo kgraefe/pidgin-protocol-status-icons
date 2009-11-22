@@ -67,11 +67,9 @@ GdkPixbuf *get_icon(const gchar *prpl, gint status) {
 	const gchar *dir = NULL;
 	gchar *filename = NULL;
 	
-	purple_debug_info(PLUGIN_STATIC_NAME, "status: %i\n", status);
-	
 	switch(status) {
 		case PURPLE_STATUS_UNAVAILABLE:
-			id = g_strdup_printf("%s-unavailable", prpl);
+			id = g_strdup_printf("%s-busy", prpl);
 			break;
 		case PURPLE_STATUS_AWAY:
 			id = g_strdup_printf("%s-away", prpl);
@@ -97,6 +95,8 @@ GdkPixbuf *get_icon(const gchar *prpl, gint status) {
 		/*** Icon laden ***/
 		file = pidgin_icon_theme_get_icon(PIDGIN_ICON_THEME(theme), id);
 		if(!file) {
+			purple_debug_info(PLUGIN_STATIC_NAME, "Icon not found: %s\n", id);
+			
 			g_free(id);
 			return NULL;
 		}

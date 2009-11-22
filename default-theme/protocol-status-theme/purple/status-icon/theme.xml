@@ -1,0 +1,92 @@
+<theme 	type="pidgin status icon" 
+		name="Pidgin Protocol Status Icon Theme"
+		author="freakazoid"
+		image="">
+	<description>
+		Pidgin Protocol Status Icon Theme
+	</description>
+	<icon id="prpl-aim-available" file="aim-available.png" />
+	<icon id="prpl-aim-away" file="aim-away.png" />
+	<icon id="prpl-aim-busy" file="aim-busy.png" />
+	<icon id="prpl-aim-extended-away" file="aim-extended-away.png" />
+	<icon id="prpl-aim-invisible" file="aim-invisible.png" />
+	<icon id="prpl-aim-offline" file="aim-offline.png" />
+	<icon id="prpl-bonjour-available" file="bonjour-available.png" />
+	<icon id="prpl-bonjour-away" file="bonjour-away.png" />
+	<icon id="prpl-bonjour-busy" file="bonjour-busy.png" />
+	<icon id="prpl-bonjour-extended-away" file="bonjour-extended-away.png" />
+	<icon id="prpl-bonjour-invisible" file="bonjour-invisible.png" />
+	<icon id="prpl-bonjour-offline" file="bonjour-offline.png" />
+	<icon id="prpl-gadu-gadu-available" file="gadu-gadu-available.png" />
+	<icon id="prpl-gadu-gadu-away" file="gadu-gadu-away.png" />
+	<icon id="prpl-gadu-gadu-busy" file="gadu-gadu-busy.png" />
+	<icon id="prpl-gadu-gadu-extended-away" file="gadu-gadu-extended-away.png" />
+	<icon id="prpl-gadu-gadu-invisible" file="gadu-gadu-invisible.png" />
+	<icon id="prpl-gadu-gadu-offline" file="gadu-gadu-offline.png" />
+	<icon id="prpl-icq-available" file="icq-available.png" />
+	<icon id="prpl-icq-away" file="icq-away.png" />
+	<icon id="prpl-icq-busy" file="icq-busy.png" />
+	<icon id="prpl-icq-extended-away" file="icq-extended-away.png" />
+	<icon id="prpl-icq-invisible" file="icq-invisible.png" />
+	<icon id="prpl-icq-offline" file="icq-offline.png" />
+	<icon id="prpl-irc-available" file="irc-available.png" />
+	<icon id="prpl-irc-away" file="irc-away.png" />
+	<icon id="prpl-irc-busy" file="irc-busy.png" />
+	<icon id="prpl-irc-extended-away" file="irc-extended-away.png" />
+	<icon id="prpl-irc-invisible" file="irc-invisible.png" />
+	<icon id="prpl-irc-offline" file="irc-offline.png" />
+	<icon id="prpl-jabber-available" file="jabber-available.png" />
+	<icon id="prpl-jabber-away" file="jabber-away.png" />
+	<icon id="prpl-jabber-busy" file="jabber-busy.png" />
+	<icon id="prpl-jabber-extended-away" file="jabber-extended-away.png" />
+	<icon id="prpl-jabber-invisible" file="jabber-invisible.png" />
+	<icon id="prpl-jabber-offline" file="jabber-offline.png" />
+	<icon id="prpl-meanwhile-available" file="meanwhile-available.png" />
+	<icon id="prpl-meanwhile-away" file="meanwhile-away.png" />
+	<icon id="prpl-meanwhile-busy" file="meanwhile-busy.png" />
+	<icon id="prpl-meanwhile-extended-away" file="meanwhile-extended-away.png" />
+	<icon id="prpl-meanwhile-invisible" file="meanwhile-invisible.png" />
+	<icon id="prpl-meanwhile-offline" file="meanwhile-offline.png" />
+	<icon id="prpl-msn-available" file="msn-available.png" />
+	<icon id="prpl-msn-away" file="msn-away.png" />
+	<icon id="prpl-msn-busy" file="msn-busy.png" />
+	<icon id="prpl-msn-extended-away" file="msn-extended-away.png" />
+	<icon id="prpl-msn-invisible" file="msn-invisible.png" />
+	<icon id="prpl-msn-offline" file="msn-offline.png" />
+	<icon id="prpl-novell-available" file="novell-available.png" />
+	<icon id="prpl-novell-away" file="novell-away.png" />
+	<icon id="prpl-novell-busy" file="novell-busy.png" />
+	<icon id="prpl-novell-extended-away" file="novell-extended-away.png" />
+	<icon id="prpl-novell-invisible" file="novell-invisible.png" />
+	<icon id="prpl-novell-offline" file="novell-offline.png" />
+	<icon id="prpl-qq-available" file="qq-available.png" />
+	<icon id="prpl-qq-away" file="qq-away.png" />
+	<icon id="prpl-qq-busy" file="qq-busy.png" />
+	<icon id="prpl-qq-extended-away" file="qq-extended-away.png" />
+	<icon id="prpl-qq-invisible" file="qq-invisible.png" />
+	<icon id="prpl-qq-offline" file="qq-offline.png" />
+	<icon id="prpl-silc-available" file="silc-available.png" />
+	<icon id="prpl-silc-away" file="silc-away.png" />
+	<icon id="prpl-silc-busy" file="silc-busy.png" />
+	<icon id="prpl-silc-extended-away" file="silc-extended-away.png" />
+	<icon id="prpl-silc-invisible" file="silc-invisible.png" />
+	<icon id="prpl-silc-offline" file="silc-offline.png" />
+	<icon id="prpl-simple-available" file="simple-available.png" />
+	<icon id="prpl-simple-away" file="simple-away.png" />
+	<icon id="prpl-simple-busy" file="simple-busy.png" />
+	<icon id="prpl-simple-extended-away" file="simple-extended-away.png" />
+	<icon id="prpl-simple-invisible" file="simple-invisible.png" />
+	<icon id="prpl-simple-offline" file="simple-offline.png" />
+	<icon id="prpl-yahoo-available" file="yahoo-available.png" />
+	<icon id="prpl-yahoo-away" file="yahoo-away.png" />
+	<icon id="prpl-yahoo-busy" file="yahoo-busy.png" />
+	<icon id="prpl-yahoo-extended-away" file="yahoo-extended-away.png" />
+	<icon id="prpl-yahoo-invisible" file="yahoo-invisible.png" />
+	<icon id="prpl-yahoo-offline" file="yahoo-offline.png" />
+	<icon id="prpl-zephyr-available" file="zephyr-available.png" />
+	<icon id="prpl-zephyr-away" file="zephyr-away.png" />
+	<icon id="prpl-zephyr-busy" file="zephyr-busy.png" />
+	<icon id="prpl-zephyr-extended-away" file="zephyr-extended-away.png" />
+	<icon id="prpl-zephyr-invisible" file="zephyr-invisible.png" />
+	<icon id="prpl-zephyr-offline" file="zephyr-offline.png" />
+</theme>
