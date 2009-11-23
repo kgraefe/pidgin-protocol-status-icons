@@ -67,6 +67,8 @@ GdkPixbuf *get_icon(const gchar *prpl, gint status) {
 	const gchar *dir = NULL;
 	gchar *filename = NULL;
 	
+	if(!theme) return NULL;
+	
 	switch(status) {
 		case PURPLE_STATUS_UNAVAILABLE:
 			id = g_strdup_printf("%s-busy", prpl);
@@ -117,6 +119,8 @@ GdkPixbuf *get_icon(const gchar *prpl, gint status) {
 		
 		g_datalist_set_data(&icons, id, (gpointer)icon);
 	}
+	
+	g_free(id);
 	
 	return icon;
 }
