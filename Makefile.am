@@ -6,3 +6,5 @@ EXTRA_DIST = \
 	config.h.mingw
 
 SUBDIRS = src po
+
+ACLOCAL_AMFLAGS=-I m4

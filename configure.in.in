@@ -2,12 +2,13 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.61)
-AC_INIT(pidgin-protocol-status-icons, 0.3, freakazoid@htwm.de)
+AC_INIT(pidgin-protocol-status-icons, @@VERSION@@, freakazoid@htwm.de)
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([src/pidgin-protocol-status-icons.c])
 AC_CONFIG_HEADER([config.h])
+AC_CONFIG_MACRO_DIR([m4])
 
-AC_DEFINE_UNQUOTED(PLUGIN_VERSION, ["0.3"], [Define the plugin version to be used])
+AC_DEFINE_UNQUOTED(PLUGIN_VERSION, ["@@VERSION@@"], [Define the plugin version to be used])
 
 AC_DEFINE_UNQUOTED(PLUGIN_WEBSITE, ["http://freakazoid.teamblind.de/"], [Define the plugin website to be used])
 
@@ -25,7 +26,7 @@ AC_PROG_INTLTOOL
 GETTEXT_PACKAGE=pidgin-protocol-status-icons
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, ["$GETTEXT_PACKAGE"], [Define the gettext package to be used])
-ALL_LINGUAS="de"
+ALL_LINGUAS="@@LANGUAGES@@"
 AM_GLIB_GNU_GETTEXT
 
 # Checks for libraries.
