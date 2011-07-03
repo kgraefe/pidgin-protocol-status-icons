@@ -1,1 +1,3 @@
+src/gtkblist-modifier.c
+src/icons.c
 src/pidgin-protocol-status-icons.c

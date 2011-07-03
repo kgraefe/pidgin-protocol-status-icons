@@ -7,12 +7,12 @@
 # PATHS
 #
 
-PIDGIN_PROTOCOL_STATUS_ICONS_TOP :=		..
--include $(PIDGIN_PROTOCOL_STATUS_ICONS_TOP)/local.mak
+PLUGIN_TOP :=		..
+-include $(PLUGIN_TOP)/local.mak
 PIDGIN_TREE_TOP ?=		../../../..
 include $(PIDGIN_TREE_TOP)/libpurple/win32/global.mak
 
-PIDGIN_PROTOCOL_STATUS_ICONS_VERSION := $(shell cat ${PIDGIN_PROTOCOL_STATUS_ICONS_TOP}/VERSION)
+PIDGIN_PROTOCOL_STATUS_ICONS_VERSION := $(shell cat ${PLUGIN_TOP}/VERSION)
 
 ##
 ## VARIABLE DEFINITIONS
@@ -34,9 +34,9 @@ DEFINES = -DPIDGIN_PROTOCOL_STATUS_ICONS_VERSION=\"$(PIDGIN_PROTOCOL_STATUS_ICON
 ## INCLUDE PATHS
 ##
 
-INCLUDE_PATHS +=        -I. \
-						-I.. \
-                        -I$(PIDGIN_TREE_TOP) \
+INCLUDE_PATHS +=	-I. \
+			-I.. \
+			-I$(PIDGIN_TREE_TOP) \
                         -I$(PURPLE_TOP) \
                         -I$(PURPLE_TOP)/win32 \
                         -I$(PIDGIN_TOP) \
@@ -46,6 +46,7 @@ INCLUDE_PATHS +=        -I. \
                         -I$(GTK_TOP)/include/glib-2.0 \
                         -I$(GTK_TOP)/include/pango-1.0 \
                         -I$(GTK_TOP)/include/atk-1.0 \
+			-I$(GTK_TOP)/include/cairo \
                         -I$(GTK_TOP)/include/freetype2 \
                         -I$(GTK_TOP)/lib/glib-2.0/include \
                         -I$(GTK_TOP)/lib/gtk-2.0/include \
@@ -101,10 +102,10 @@ all: $(PIDGIN_PROTOCOL_STATUS_ICONS).dll
 install: all $(PIDGIN_INSTALL_PLUGINS_DIR)
 	cp $(PIDGIN_PROTOCOL_STATUS_ICONS).dll $(PIDGIN_INSTALL_PLUGINS_DIR)
 
-$(PIDGIN_PROTOCOL_STATUS_ICONS_OBJ): $(PIDGIN_PROTOCOL_STATUS_ICONS_TOP)/config.h $(PURPLE_VERSION_H)
+$(PIDGIN_PROTOCOL_STATUS_ICONS_OBJ): $(PLUGIN_TOP)/config.h $(PURPLE_VERSION_H)
 
-$(PIDGIN_PROTOCOL_STATUS_ICONS_TOP)/config.h: $(PIDGIN_PROTOCOL_STATUS_ICONS_TOP)/config.h.mingw
-	$(MAKE) -C $(PIDGIN_PROTOCOL_STATUS_ICONS_TOP) -f Makefile.mingw config.h
+$(PLUGIN_TOP)/config.h: $(PLUGIN_TOP)/config.h.mingw
+	$(MAKE) -C $(PLUGIN_TOP) -f Makefile.mingw config.h
 
 ##
 ## BUILD DLL
