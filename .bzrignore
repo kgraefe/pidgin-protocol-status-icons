@@ -19,3 +19,8 @@ po/POTFILES
 po/stamp-it
 src/.deps
 src/Makefile
+*.asc
+protocol-status-theme.zip
+src/.libs
+src/*.lo
+src/pidgin-protocol-status-icons.la
