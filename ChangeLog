@@ -1,5 +1,6 @@
-Version 1.0 (xxxx/xx/xx):
-	* Added russian translation
+Version 1.0 (2011/12/27):
+	* Added Polish, Slovak and Russian translation
+	* Fixed crash (Bug #706384)
 
 Version 0.3 (2009/11/22):
 	* Added default theme

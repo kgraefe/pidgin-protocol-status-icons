@@ -1,6 +1,7 @@
 config.h
 local.mak
 pidgin-protocol-status-icons-*-win32.zip
+pidgin-protocol-status-icons-*.tar.gz
 po/*.gmo
 src/pidgin-protocol-status-icons.dll
 DEB_REVISION
