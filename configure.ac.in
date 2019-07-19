@@ -8,6 +8,8 @@ AC_CONFIG_SRCDIR([src/pidgin-protocol-status-icons.c])
 AC_CONFIG_HEADER([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 
+# Note: AC_DEFINE_UNQUOTED() needs to be in a single line in order to not
+#       break scripts/gen-mingw-config_h.sh on Windows.
 AC_DEFINE_UNQUOTED(PLUGIN_VERSION, ["@@VERSION@@"], [Version])
 AC_DEFINE_UNQUOTED(PLUGIN_WEBSITE, ["https://github.com/kgraefe/pidgin-protocol-status-icons"], [Website])
 AC_DEFINE_UNQUOTED(PLUGIN_ID, ["gtk-freakazoid-protocol-status-icons"], [Pidgin internal plugin ID])

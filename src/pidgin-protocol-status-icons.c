@@ -33,8 +33,6 @@
 #include <gtkplugin.h>
 #include <gtkblist.h>
 
-#define PLUGIN_PREFS_PREFIX "/plugins/gtk/protocol-status-icons"
-
 #include "icons.h"
 #include "gtkblist-modifier.h"
 
