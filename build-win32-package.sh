@@ -4,13 +4,11 @@ set -x
 PROJECT=pidgin-protocol-status-icons
 WIN32DIR=${PROJECT}-$(cat VERSION)-win32
 
-test -f README.win32 || exit
-
 make -f Makefile.mingw clean || exit
 make -f Makefile.mingw || exit
 mkdir -p ${WIN32DIR}/pidgin/plugins || exit
 sed 's/$/\r/' CHANGES.md >${WIN32DIR}/CHANGES.md || exit
-sed 's/$/\r/' README.win32 >${WIN32DIR}/ReadMe.txt || exit
+sed 's/$/\r/' README.md >${WIN32DIR}/README.md || exit
 cp src/${PROJECT}.dll ${WIN32DIR}/pidgin/plugins || exit
 #i586-mingw32msvc-strip --strip-unneeded ${WIN32DIR}/pidgin/plugins/${PROJECT}.dll || exit
 for f in po/*.po; do
