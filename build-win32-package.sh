@@ -9,7 +9,7 @@ test -f README.win32 || exit
 make -f Makefile.mingw clean || exit
 make -f Makefile.mingw || exit
 mkdir -p ${WIN32DIR}/pidgin/plugins || exit
-sed 's/$/\r/' ChangeLog >${WIN32DIR}/ChangeLog.txt || exit
+sed 's/$/\r/' CHANGES.md >${WIN32DIR}/CHANGES.md || exit
 sed 's/$/\r/' README.win32 >${WIN32DIR}/ReadMe.txt || exit
 cp src/${PROJECT}.dll ${WIN32DIR}/pidgin/plugins || exit
 #i586-mingw32msvc-strip --strip-unneeded ${WIN32DIR}/pidgin/plugins/${PROJECT}.dll || exit

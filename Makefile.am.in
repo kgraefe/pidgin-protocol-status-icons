@@ -3,7 +3,7 @@ EXTRA_DIST = \
 	scripts/gen-version.sh \
 	scripts/gen-mingw-config_h.sh \
 	Makefile.mingw \
-	ChangeLog \
+	CHANGES.md \
 	VERSION
 
 SUBDIRS = src po
