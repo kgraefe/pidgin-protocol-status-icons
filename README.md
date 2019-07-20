@@ -18,13 +18,11 @@ buddy list.
 ## Installation
 ### Installation on Windows
 Download the ZIP file from the [latest release][1] and extract the contents of
-`pidgin` either to the installation directory of Pidgin (typically `C:\Program
-Files\Pidgin`) or to your .purple user directory (typically
+`pidgin-protocol-status-icons` to your .purple user directory (typically
 `%APPDATA%\Roaming\.purple`).
 
-Extract the default theme into `themes` in your .purple user directory (create
-`themes` if not present). After that you can enable the plugin and select the
-theme in `Tools -> Preferences -> Themes -> Status Icon Theme`.
+After that you can enable the plugin and select the theme in `Tools ->
+Preferences -> Themes -> Status Icon Theme`.
 
 ### Installation on Linux
 If your distribution has the plugin in its repository you can use that.
