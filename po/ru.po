@@ -1,28 +1,31 @@
-# Russian translation for pidgin-protocol-status-icons
-# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
-# This file is distributed under the same license as the pidgin-protocol-status-icons package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Konrad Gräfe <konradgraefe@aol.com>, 2019
+# 
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: pidgin-protocol-status-icons\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-27 17:21+0100\n"
-"PO-Revision-Date: 2012-04-18 08:51+0000\n"
-"Last-Translator: HsH <hsh@runtu.org>\n"
-"Language-Team: Russian <ru@li.org>\n"
+"POT-Creation-Date: 2019-07-20 09:58+0200\n"
+"PO-Revision-Date: 2019-07-20 08:00+0000\n"
+"Last-Translator: Konrad Gräfe <konradgraefe@aol.com>, 2019\n"
+"Language-Team: Russian (https://www.transifex.com/kgraefe/teams/101543/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-04-19 04:49+0000\n"
-"X-Generator: Launchpad (build 15108)\n"
 "Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: ../src/pidgin-protocol-status-icons.c:121
+#: ../src/pidgin-protocol-status-icons.c:106
 msgid "Protocol Status Icons"
 msgstr "Значки статуса протоколов"
 
-#: ../src/pidgin-protocol-status-icons.c:122
-#: ../src/pidgin-protocol-status-icons.c:123
+#: ../src/pidgin-protocol-status-icons.c:107
+#: ../src/pidgin-protocol-status-icons.c:108
 msgid "Replaces the status icons in the buddy list."
 msgstr "Заменяет значки статусов в списке контактов"
