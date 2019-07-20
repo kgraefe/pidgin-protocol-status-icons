@@ -55,6 +55,9 @@ configure.ac: configure.ac.in .stamp-version-$(PLUGIN_VERSION) ./scripts/gen-con
 	./scripts/gen-configure_ac.sh
 endif
 
+update-po:
+	./scripts/po-update.sh
+
 %.gmo: %.po
 	rm -f $@
 	$(GMSGFMT) --statistics -o $@ $<

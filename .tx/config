@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[pidgin-protocol-status-icons.base]
+file_filter = po/<lang>.po
+source_file = po/pidgin-protocol-status-icons.pot
+source_lang = en
+type = PO

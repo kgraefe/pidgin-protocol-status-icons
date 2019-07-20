@@ -68,6 +68,9 @@ code" archives, you need to run `./autogen.sh` before running `./configure`.
 We love patches. :heart: Please fork the project, do your changes and make a
 pull request.
 
+You can also help translating this project on [Transifex][4].
+
 [1]: https://github.com/kgraefe/pidgin-protocol-status-icons/releases/latest
 [2]: https://developer.pidgin.im/wiki/BuildingWinPidgin
 [3]: https://github.com/kgraefe/pidgin-windev
+[4]: https://www.transifex.com/kgraefe/pidgin-protocol-status-icons
