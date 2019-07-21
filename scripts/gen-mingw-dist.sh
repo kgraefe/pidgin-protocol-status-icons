@@ -27,15 +27,6 @@ for f in po/*.po; do
 	cp po/$lang.gmo $TEMPDIR/$PLUGIN/locale/$lang/LC_MESSAGES/$GETTEXT_PKG.mo
 done
 
-pushd .
-cd default-theme/
-THEMEDIR=protocol-status-theme/purple/status-icon
-mkdir -p $TEMPDIR/$PLUGIN/themes/$THEMEDIR/16
-for f in $THEMEDIR/theme.xml $THEMEDIR/16/*.png; do
-	cp $f $TEMPDIR/$PLUGIN/themes/$f
-done
-popd
-
 for f in README.md CHANGES.md AUTHORS.md COPYING; do
 	unix2dos -n $f $TEMPDIR/$f
 done

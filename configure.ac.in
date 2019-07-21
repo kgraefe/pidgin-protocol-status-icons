@@ -4,7 +4,7 @@
 AC_PREREQ(2.61)
 AC_INIT(pidgin-protocol-status-icons, @@VERSION@@)
 AM_INIT_AUTOMAKE([1.9 foreign tar-pax])
-AC_CONFIG_SRCDIR([src/pidgin-protocol-status-icons.c])
+AC_CONFIG_SRCDIR([src/plugin.c])
 AC_CONFIG_HEADER([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 

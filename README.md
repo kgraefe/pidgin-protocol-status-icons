@@ -21,16 +21,9 @@ Download the ZIP file from the [latest release][1] and extract the contents of
 `pidgin-protocol-status-icons` to your .purple user directory (typically
 `%APPDATA%\Roaming\.purple`).
 
-After that you can enable the plugin and select the theme in `Tools ->
-Preferences -> Themes -> Status Icon Theme`.
-
 ### Installation on Linux
 If your distribution has the plugin in its repository you can use that.
 Otherwise you must build the plugin [from source](#building-on-linux).
-
-Extract the default theme into `themes` in your .purple user directory (create
-`themes` if not present). After that you can enable the plugin and select the
-theme in `Tools -> Preferences -> Themes -> Status Icon Theme`.
 
 ## Building from source
 ### Building on Windows
