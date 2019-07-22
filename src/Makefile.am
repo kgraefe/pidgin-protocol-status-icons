@@ -1,5 +1,3 @@
-EXTRA_DIST = Makefile.mingw
-
 plugindir = $(libdir)/pidgin
 DEFS = -DLOCALEDIR=\"$(localedir)\"
 
