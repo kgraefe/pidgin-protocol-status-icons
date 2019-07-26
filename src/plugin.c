@@ -41,13 +41,41 @@ static void core_quitting_cb() {
 	core_quitting = TRUE;
 }
 
+/* Altered from do_colorshift in gnome-panel */
+static void do_alphashift(GdkPixbuf *pixbuf, int shift) {
+	gint i, j;
+	gint width, height, padding;
+	guchar *pixels;
+	int val;
+
+	if (!gdk_pixbuf_get_has_alpha(pixbuf))
+		return;
+
+	width = gdk_pixbuf_get_width(pixbuf);
+	height = gdk_pixbuf_get_height(pixbuf);
+	padding = gdk_pixbuf_get_rowstride(pixbuf) - width * 4;
+	pixels = gdk_pixbuf_get_pixels(pixbuf);
+
+	for (i = 0; i < height; i++) {
+		for (j = 0; j < width; j++) {
+			pixels++;
+			pixels++;
+			pixels++;
+			val = *pixels - shift;
+			*(pixels++) = CLAMP(val, 0, 255);
+		}
+		pixels += padding;
+	}
+}
+
+
 static GdkPixbuf *get_icon(PurpleBuddy *buddy, PurpleBlistNode *node) {
 	GdkPixbuf *icon, *overlay = NULL;
 	gchar id[128];
 	PurpleAccount *account;
 	PurplePresence *presence;
 	const gchar *prpl, *status;
-	gboolean offline;
+	gboolean idle, offline;
 	gint x, y, h, w;
 
 	account = purple_buddy_get_account(buddy);
@@ -69,11 +97,12 @@ static GdkPixbuf *get_icon(PurpleBuddy *buddy, PurpleBlistNode *node) {
 			)
 		)
 	);
+	idle = purple_presence_is_idle(presence);
 	offline = purple_presence_is_status_primitive_active(
 		presence, PURPLE_STATUS_OFFLINE
 	);
 
-	g_snprintf(id, sizeof(id), "%s-%s", prpl, status);
+	g_snprintf(id, sizeof(id), "%s-%s-%d", prpl, status, idle);
 	icon = g_datalist_get_data(&icons, id);
 	if(icon) {
 		return icon;
@@ -87,6 +116,7 @@ static GdkPixbuf *get_icon(PurpleBuddy *buddy, PurpleBlistNode *node) {
 	if(offline) {
 		/* If the buddy is offline, just greyscale the protocol icon. */
 		gdk_pixbuf_saturate_and_pixelate(icon, icon, 0.0, FALSE);
+		do_alphashift(icon, 77);
 	} else {
 		/* Otherwise blend the status icon over the protocol icon. */
 		overlay = gtk_widget_render_icon(
@@ -107,6 +137,10 @@ static GdkPixbuf *get_icon(PurpleBuddy *buddy, PurpleBlistNode *node) {
 			GDK_INTERP_BILINEAR, 255
 		);
 		g_object_unref(overlay);
+
+		if(idle) {
+			do_alphashift(icon, 77);
+		}
 	}
 
 	g_datalist_set_data_full(&icons, id, icon, g_object_unref);
