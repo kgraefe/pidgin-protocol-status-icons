@@ -25,6 +25,13 @@
 #define debug(fmt, ...) \
 	purple_debug_info(PLUGIN_STATIC_NAME, fmt, ##__VA_ARGS__)
 
+typedef struct _pidgin_blist_node {
+	GtkTreeRowReference *row;
+	gboolean contact_expanded;
+	gboolean recent_signonoff;
+	/* ... */
+} PidginBlistNode;
+
 static PurplePlugin *plugin;
 static PidginBuddyList *gtkblist = NULL;
 static gboolean core_quitting = FALSE;
@@ -105,6 +112,7 @@ static void gtkblist_row_changed_cb(
 
 	PurpleBlistNode *node;
 	PurpleBuddy *buddy;
+	PidginBlistNode *gtkbuddynote;
 	GdkPixbuf *icon;
 
 	if(inuse) {
@@ -123,8 +131,15 @@ static void gtkblist_row_changed_cb(
 		return;
 	}
 
+	gtkbuddynote = ((PurpleBlistNode*)buddy)->ui_data;
+	if(gtkbuddynote && gtkbuddynote->recent_signonoff) {
+		return;
+	}
+
 	icon = get_icon(buddy, node);
-	if(!icon) return;
+	if(!icon) {
+		return;
+	}
 
 	inuse = TRUE;
 	gtk_tree_store_set(
