@@ -42,64 +42,73 @@ static void core_quitting_cb() {
 }
 
 static GdkPixbuf *get_icon(PurpleBuddy *buddy, PurpleBlistNode *node) {
-	GdkPixbuf *icon, *status = NULL;
+	GdkPixbuf *icon, *overlay = NULL;
 	gchar id[128];
 	PurpleAccount *account;
-	const gchar *protocol;
+	PurplePresence *presence;
+	const gchar *prpl, *status;
+	gboolean offline;
 	gint x, y, h, w;
 
 	account = purple_buddy_get_account(buddy);
-	if(!account) {
+	presence = purple_buddy_get_presence(buddy);
+	if(!account || !presence) {
 		return NULL;
 	}
 
-	protocol = purple_account_get_protocol_id(account);
-	if(!protocol) {
+	prpl = purple_account_get_protocol_id(account);
+	if(!prpl) {
 		return NULL;
 	}
+	status = pidgin_stock_id_from_status_primitive(
+		purple_status_type_get_primitive(
+			purple_status_get_type(
+				purple_presence_get_active_status(
+					presence
+				)
+			)
+		)
+	);
+	offline = purple_presence_is_status_primitive_active(
+		presence, PURPLE_STATUS_OFFLINE
+	);
 
-	status = pidgin_blist_get_status_icon(node, PIDGIN_STATUS_ICON_SMALL);
-	if(!status) {
-		return NULL;
-	}
-
-	/* We get the same GdkPixBuf for each call that results in the exact same
-	 * icon.  Therefore we can use the pointer to generate the cache ID.
-	 */
-	g_snprintf(id, sizeof(id), "%s-%p", protocol, status);
+	g_snprintf(id, sizeof(id), "%s-%s", prpl, status);
 	icon = g_datalist_get_data(&icons, id);
 	if(icon) {
-		g_object_unref(status);
 		return icon;
 	}
 
 	icon = pidgin_create_prpl_icon(account, PIDGIN_PRPL_ICON_MEDIUM);
 	if(!icon) {
-		g_object_unref(status);
 		return NULL;
 	}
 
-	if(purple_presence_is_status_primitive_active(
-		purple_buddy_get_presence(buddy), PURPLE_STATUS_OFFLINE
-	)) {
+	if(offline) {
 		/* If the buddy is offline, just greyscale the protocol icon. */
 		gdk_pixbuf_saturate_and_pixelate(icon, icon, 0.0, FALSE);
 	} else {
 		/* Otherwise blend the status icon over the protocol icon. */
-		w = gdk_pixbuf_get_width(status);
-		h = gdk_pixbuf_get_height(status);
+		overlay = gtk_widget_render_icon(
+			GTK_WIDGET(gtkblist->treeview), status,
+			gtk_icon_size_from_name(PIDGIN_ICON_SIZE_TANGO_MICROSCOPIC),
+			"GtkTreeView"
+		);
+
+		w = gdk_pixbuf_get_width(overlay);
+		h = gdk_pixbuf_get_height(overlay);
 		x = gdk_pixbuf_get_width(icon) - w;
 		y = gdk_pixbuf_get_height(icon) - h;
 
 		gdk_pixbuf_composite(
-			status, icon,
+			overlay, icon,
 			x, y, w, h,
 			x, y, 1.0, 1.0,
 			GDK_INTERP_BILINEAR, 255
 		);
+		g_object_unref(overlay);
 	}
 
-	g_object_unref(status);
 	g_datalist_set_data_full(&icons, id, icon, g_object_unref);
 
 	return icon;
