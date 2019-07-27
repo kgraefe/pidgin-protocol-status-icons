@@ -4,7 +4,8 @@
 - Composite icons on runtime. This brings a bunch of improvements:
   - Remove the need for a custom status icon theme
   - Simplify installation
-  - Add support for third-party protocol
+  - Add support for third-party protocols
+- Add Greek and update Russian translation
 
 ## Version 1.0 (2011-12-27)
 - Add Polish, Slovak and Russian translation
