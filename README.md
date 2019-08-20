@@ -3,8 +3,10 @@
 [![License](https://img.shields.io/badge/License-GPLv2-blue.svg?style=flat)](COPYING)
 [![Download](https://img.shields.io/badge/Download-Latest_Release-brightgreen.svg?style=flat)][1]
 
-This is a Pidgin plugin that adds the protocol icon to the status icons in the
+This is Pidgin plugin that adds the protocol icon to the status icons in the
 buddy list.
+
+![Screenshot](https://user-images.githubusercontent.com/3797324/63335077-05d86580-c33d-11e9-8969-3b614802aaa8.png)
 
 ## Table of contents
 - [Installation](#installation)
