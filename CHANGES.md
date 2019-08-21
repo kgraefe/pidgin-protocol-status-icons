@@ -1,6 +1,6 @@
 # Pidgin Protocol Status Icons Changes
 
-## Version 2.0 (in development)
+## Version 2.0 (2019-08-21)
 - Composite icons on runtime. This brings a bunch of improvements:
   - Remove the need for a custom status icon theme
   - Simplify installation
