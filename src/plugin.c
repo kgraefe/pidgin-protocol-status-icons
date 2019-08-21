@@ -10,7 +10,7 @@
 #define PURPLE_PLUGINS
 #endif
 
-#include "internal.h"
+#include <glib/gi18n-lib.h>
 
 #include <plugin.h>
 #include <version.h>
@@ -21,6 +21,10 @@
 #include <gtkblist.h>
 #include <gtkutils.h>
 #include <pidginstock.h>
+
+#if defined(_WIN32)
+#	include <win32dep.h>
+#endif
 
 #define debug(fmt, ...) \
 	purple_debug_info(PLUGIN_STATIC_NAME, fmt, ##__VA_ARGS__)
